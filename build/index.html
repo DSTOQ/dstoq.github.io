@@ -1,0 +1,1390 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>DSTOQ API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-19fff04f.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#prerequisites" class="toc-h2 toc-link" data-title="Prerequisites">Prerequisites</a>
+                  </li>
+                  <li>
+                    <a href="#basic-concepts" class="toc-h2 toc-link" data-title="Basic Concepts">Basic Concepts</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#assets" class="toc-h1 toc-link" data-title="Assets">Assets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#available-assets" class="toc-h2 toc-link" data-title="Available Assets">Available Assets</a>
+                  </li>
+                  <li>
+                    <a href="#orderbook" class="toc-h2 toc-link" data-title="Orderbook">Orderbook</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wallet" class="toc-h1 toc-link" data-title="Wallet">Wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#balances" class="toc-h2 toc-link" data-title="Balances">Balances</a>
+                  </li>
+                  <li>
+                    <a href="#offers" class="toc-h2 toc-link" data-title="Offers">Offers</a>
+                  </li>
+                  <li>
+                    <a href="#trades" class="toc-h2 toc-link" data-title="Trades">Trades</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#trading" class="toc-h1 toc-link" data-title="Trading">Trading</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#submitting-an-order" class="toc-h2 toc-link" data-title="Submitting an order">Submitting an order</a>
+                  </li>
+                  <li>
+                    <a href="#sep-8" class="toc-h2 toc-link" data-title="SEP-8">SEP-8</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#bring-your-own-customers" class="toc-h1 toc-link" data-title="Bring Your Own Customers">Bring Your Own Customers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-setup" class="toc-h2 toc-link" data-title="API Setup">API Setup</a>
+                  </li>
+                  <li>
+                    <a href="#registering-new-users" class="toc-h2 toc-link" data-title="Registering new users">Registering new users</a>
+                  </li>
+                  <li>
+                    <a href="#exchanging-kyc-information" class="toc-h2 toc-link" data-title="Exchanging KYC information">Exchanging KYC information</a>
+                  </li>
+                  <li>
+                    <a href="#webhook-integration" class="toc-h2 toc-link" data-title="Webhook Integration">Webhook Integration</a>
+                  </li>
+                  <li>
+                    <a href="#trading" class="toc-h2 toc-link" data-title="Trading">Trading</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><h3>Endpoints</h3></li>
+            <li><a target="_blank" href="https://api.dstoq.com/core/">The DSTOQ Trading API</a></li>
+            <li><a target="_blank" href="https://api.dstoq.com/accounts/">The DSTOQ Auth Service</a></li>
+            <li><a target="_blank" href="https://dsq.technology/sep-8/tx-approve/">DSTOQs SEP-8 Endpoint</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the DSTOQ API. Securities trading is only a few lines away. We&#39;ll onboard you with everything you&#39;ll need to know to build or integrate awesome trading experience of everything out there that can be tokenized.</p>
+
+<p>It doesn&#39;t matter if you are a seasoned algorithmic trader or beginner in the field. We have accumulated crystal clear and easily adaptable examples for you.</p>
+
+<p>Fintech or blockchain novice? Don&#39;t sweat, we&#39;ll explain the important concepts along the way.</p>
+
+<p>Ping us <a href="https://twitter.com/dstoq">@dstoq</a> whenever you get stuck!</p>
+<h2 id='prerequisites'>Prerequisites</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.dstoq.com/core/
+
+<span class="c"># output:</span>
+<span class="c"># {"success":true,"message":"Hooray, we're here to deliver awesomeness!"}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.dstoq.com/core/'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output:
+</span><span class="p">{</span><span class="s">'success'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="s">'message'</span><span class="p">:</span> <span class="s">"Hooray, we're here to deliver awesomeness!"</span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output:</span>
+<span class="p">{</span><span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Hooray, we're here to deliver awesomeness!</span><span class="dl">"</span><span class="p">}</span>
+</code></pre></div>
+<p>We prepared code snippets to onboard you ASAP. So before we start learning the concepts, let&#39;s give it a go!</p>
+
+<p>Copy, paste &amp; play a code snippet from the right side to get comfortable! You&#39;ll need the <a href="https://github.com/axios/axios">axios library</a> for JavaScript or <a href="http://docs.python-requests.org/en/master/">requests</a> for python.</p>
+
+<p>However: It&#39;s a REST API, it should be straightforward to adapt this to your needs &amp; tooling. There are Stellar Wrappers for almost <a href="https://www.stellar.org/developers/reference/">any language</a> around.</p>
+
+<p>All snippets use the stellar testnet and our staging infrastructure.</p>
+<h2 id='basic-concepts'>Basic Concepts</h2>
+<p>Securities trading is complicated, luckily we abstract away the heavy lifting to a few API endpoints.</p>
+
+<p>DSTOQ is a trading facility platform where partner banks of ours can issue tokens representing securities. Those securities are held in custody by the bank which in turn is regulated and licenced to do so.</p>
+
+<p>However, the D in DSTOQ stands for decentralized. This has a few implications with the important one being that we don&#39;t hold customers tokens. They are held on-chain.</p>
+
+<aside class="notice">
+Whenever we refer to the term on-chain, we mean that the action in question is performed on the stellar blockchain. Actions on-chain are immutable and verifiable.
+</aside>
+
+<p>Consequently, the customer needs to know something that no one else knows - a private key to verify ownership over assets and transactions need to be signed with said private key before it can be send to the underlying chain.</p>
+
+<p>We&#39;ll explain the concept in more depth below and we have an additional section for best practises that will guide you through the process.</p>
+<h1 id='authentication'>Authentication</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"username": "emailaddressofuser@dstoq.com", "password": "AVerySecretPassword"}'</span> https://api.dstoq.com/accounts/auth/jwt/create/
+
+<span class="c"># output</span>
+<span class="o">{</span>
+   <span class="s2">"refresh"</span>: <span class="s2">"... some refresh token ..."</span>,
+   <span class="s2">"access"</span>: ... some access token ...<span class="s2">"
+}
+</span></code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/accounts/auth/jwt/create/</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">emailaddressofuser@dstoq.com</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">AVerySecretPassword</span><span class="dl">'</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output</span>
+<span class="p">{</span>
+   <span class="dl">"</span><span class="s2">refresh</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">... some refresh token ...</span><span class="dl">"</span><span class="p">,</span>
+   <span class="dl">"</span><span class="s2">access</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">... some access token ...</span><span class="dl">"</span>
+ <span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.dstoq.com/accounts/auth/jwt/create/'</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'emailaddressofuser@dstoq.com'</span>
+  <span class="s">'password'</span><span class="p">:</span> <span class="s">'AVerySecretPassword'</span>
+<span class="p">}).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="p">{</span>
+   <span class="s">"refresh"</span><span class="p">:</span> <span class="s">"... some refresh token ..."</span><span class="p">,</span>
+   <span class="s">"access"</span><span class="p">:</span> <span class="s">"... some access token ..."</span>
+ <span class="p">}</span>
+</code></pre></div>
+<p>This section explains how you can interact with the DSTOQ API as an existing customer. We&#39;ll explain how you can bring your own customer base to the platform and use a whitelabeld-DSTOQ version!</p>
+
+<p>You can obtain a JWT token to use subsequent services that require authentication.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p><code>POST https://api.dstoq.com/accounts/auth/jwt/create/</code></p>
+
+<p><strong>JSON Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>The password of the user.</td>
+</tr>
+</tbody></table>
+
+<p>The endpoint returns, among other information, a token that can be used to authenticate against the API. Subsequent calls must then send an <code>Authorization</code> header using the given token:</p>
+
+<p><code>Authorization: JWT TOKEN_GOES_HERE</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f"</span> https://api.dstoq.com/accounts/auth/users/me/
+
+<span class="c"># output</span>
+<span class="o">{</span>
+    <span class="s2">"country_code"</span>: <span class="s2">"br"</span>,
+    <span class="s2">"email"</span>: <span class="s2">"emailaddressofuser@dstoq.com"</span>,
+    <span class="s2">"kyc_status"</span>: <span class="s2">"pending"</span>
+<span class="o">}</span>
+
+
+curl <span class="nt">-H</span> <span class="s2">"Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f"</span> https://api.dstoq.com/core/accounts/accounts/me/
+
+<span class="c"># output</span>
+<span class="o">{</span>
+    <span class="s2">"account_provider"</span>: 1,
+    <span class="s2">"country_code"</span>: <span class="s2">"br"</span>,
+    <span class="s2">"email"</span>: <span class="s2">"emailaddressofuser@dstoq.com"</span>,
+    <span class="s2">"first_name"</span>: <span class="s2">"Christian"</span>,
+    <span class="s2">"has_deposited"</span>: <span class="nb">true</span>,
+    <span class="s2">"id"</span>: 19232,
+    <span class="s2">"last_name"</span>: <span class="s2">"Peters"</span>,
+    <span class="s2">"public_key"</span>: <span class="s2">"GCXETER4MRRY7WNOLIXETD6OZ46P6KGUMOORXF2JCJUXIKBW2BS6GZGA"</span>,
+    <span class="s2">"referral_short_link"</span>: <span class="s2">"https://app.dstoq.com/9vUm"</span>,
+    <span class="s2">"signer_key"</span>: <span class="s2">"GCXETER4MRRY7WNOLIXETD6OZ46P6KGUMOORXF2JCJUXIKBW2BS6GZGA"</span>,
+    <span class="s2">"status"</span>: <span class="s2">"kyc_passed"</span>
+<span class="o">}</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f</span><span class="dl">'</span><span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/accounts/accounts/user/</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output</span>
+<span class="p">{</span>
+    <span class="dl">"</span><span class="s2">country_code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">br</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">emailaddressofuser@dstoq.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">kyc_status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pending</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f</span><span class="dl">'</span><span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/accounts/accounts/me/</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output</span>
+<span class="p">{</span>
+    <span class="dl">"</span><span class="s2">account_provider</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">country_code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">br</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">emailaddressofuser@dstoq.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">first_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Christian</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">has_deposited</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">19232</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">last_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Peters</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">public_key</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GCXETER4MRRY7WNOLIXETD6OZ46P6KGUMOORXF2JCJUXIKBW2BS6GZGA</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">referral_short_link</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://app.dstoq.com/9vUm</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">signer_key</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GCXETER4MRRY7WNOLIXETD6OZ46P6KGUMOORXF2JCJUXIKBW2BS6GZGA</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kyc_passed</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.dstoq.com/accounts/accounts/user/'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f'</span>
+<span class="p">}).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="p">{</span>
+    <span class="s">"country_code"</span><span class="p">:</span> <span class="s">"br"</span><span class="p">,</span>
+    <span class="s">"email"</span><span class="p">:</span> <span class="s">"emailaddressofuser@dstoq.com"</span><span class="p">,</span>
+    <span class="s">"kyc_status"</span><span class="p">:</span> <span class="s">"pending"</span>
+<span class="p">}</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.dstoq.com/core/accounts/accounts/me/'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f'</span>
+<span class="p">}).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="p">{</span>
+    <span class="s">"account_provider"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"country_code"</span><span class="p">:</span> <span class="s">"br"</span><span class="p">,</span>
+    <span class="s">"email"</span><span class="p">:</span> <span class="s">"emailaddressofuser@dstoq.com"</span><span class="p">,</span>
+    <span class="s">"first_name"</span><span class="p">:</span> <span class="s">"Christian"</span><span class="p">,</span>
+    <span class="s">"has_deposited"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">19232</span><span class="p">,</span>
+    <span class="s">"last_name"</span><span class="p">:</span> <span class="s">"Peters"</span><span class="p">,</span>
+    <span class="s">"public_key"</span><span class="p">:</span> <span class="s">"GCXETER4MRRY7WNOLIXETD6OZ46P6KGUMOORXF2JCJUXIKBW2BS6GZGA"</span><span class="p">,</span>
+    <span class="s">"referral_short_link"</span><span class="p">:</span> <span class="s">"https://app.dstoq.com/9vUm"</span><span class="p">,</span>
+    <span class="s">"signer_key"</span><span class="p">:</span> <span class="s">"GCXETER4MRRY7WNOLIXETD6OZ46P6KGUMOORXF2JCJUXIKBW2BS6GZGA"</span><span class="p">,</span>
+    <span class="s">"status"</span><span class="p">:</span> <span class="s">"kyc_passed"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Try it with the <code>user</code> endpoint that gives you a few basic information about the user behind the given token:</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p><strong><em>Auth Information</em></strong></p>
+
+<p><code>GET  https://api.dstoq.com/accounts/accounts/user/</code></p>
+
+<p><strong><em>Trading Information</em></strong></p>
+
+<p><code>GET https://api.dstoq.com/core/accounts/accounts/me/</code>
+<aside class="notice">
+We want to keep the samples clean, so we just use a variable <code>token</code> for subsequent samples instead of including a token that you need to adjust anyway.
+</aside></p>
+<h1 id='assets'>Assets</h1>
+<p>A trading flow is pretty straightforward to implement, as you don&#39;t have to wrestle with a lot of details.</p>
+
+<p>Specifically if you want ...</p>
+
+<ul>
+<li>to display information about the assets that people can use</li>
+<li>to display the current orders that users have placed which have not yet been matched</li>
+<li>to go the extra mile sometimes and present historical data</li>
+<li>to have some eye candy with charts about the price history</li>
+<li>to create &amp; delete orders</li>
+</ul>
+
+<p>Fortunately that can be done with only a few calls. Let&#39;s dive in.</p>
+<h2 id='available-assets'>Available Assets</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.dstoq.com/core/assets/assets/?trading_pair<span class="o">=</span>USDC&amp;time_span<span class="o">=</span>LAST_HOUR
+
+<span class="c"># output:</span>
+<span class="o">{</span>
+  <span class="s2">"count"</span>: 11,
+  <span class="s2">"next"</span>: null,
+  <span class="s2">"previous"</span>: null,
+  <span class="s2">"results"</span>: <span class="o">[</span>
+   <span class="o">{</span>
+    <span class="s2">"id"</span>: 1,
+    <span class="s2">"is_trading_pair"</span>: <span class="nb">false</span>,
+    <span class="s2">"code"</span>: <span class="s2">"TSLA"</span>,
+    <span class="s2">"unicode"</span>: <span class="s2">""</span>,
+    <span class="s2">"issuer_name"</span>: <span class="s2">"DSQ AG"</span>,
+    <span class="s2">"issuer"</span>: <span class="s2">"GBRDHSZL4ZKOI2PTUMM53N3NICZXC5OX3KPCD4WD4NG4XGCBC2ZA3KAG"</span>,
+    <span class="s2">"custodian_name"</span>: <span class="s2">"Mason PrivatBank"</span>,
+    <span class="s2">"asset_type"</span>: <span class="s2">"credit_alphanum4"</span>,
+    <span class="s2">"display_decimals"</span>: 7,
+    <span class="s2">"name"</span>: <span class="s2">"Tesla"</span>,
+    <span class="s2">"company_name"</span>: <span class="s2">"Tesla, Inc."</span>,
+    <span class="s2">"desc"</span>: <span class="s2">"Tesla, Inc., designs, develops, manufactures and sells fully electric vehicles, and energy storage systems, as well as installs, operates and maintains solar and energy storage products. The Company operates through two segments: Automotive, and Energy generation and storage."</span>,
+    <span class="s2">"image"</span>: <span class="s2">"https://dstoq-prod-core-storage.s3.amazonaws.com/equities.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIASP7JDUVZ75NLNLGF%2F20210626%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210626T090745Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGUaCWV1LXdlc3QtMSJIMEYCIQC2wllKb4%2BGCmiQmc6aneGCFg%2Bf%2BgPkT4ASNZq4N3FVvgIhAIykJM5CEnvNfyjP8iBWvIr%2BqX8sgtvWY9uuHAGIo2kgKosECD4QARoMMTcxNzUwNjk2MzA3Igz4i3pIVLp8Z%2FCFLyQq6AMbvpJGF9FhqaRgI%2FlZ6m1vvu0o02lh4MlgDiA9nBcYyYqRaev6UtL2udMaV3KTac83B13cRBMt%2BvLoZfed80gTSm38FbKTKRV9e%2FbfSWVCUcOlAlC0zetD0pYe9pHBraDpyKwjte7GQkZrSsGWCqnzFjP21WAX3djoXTy2fuNR%2FA%2BrWRFstjA0uqQrA5Av4OzUqB3Z4RatzDxy90iNpTgDRTYYAmnx8U%2BDZm7a9DErM2KUhu9J8Q3qCnHukQI70HWLfXR0tsc%2FUDGemDPvw8M6rBYsgFfBoPH015qD27i2R%2B0eNy4KFZIKaPnYF7k%2FzgE%2BsW0Mkr3y0RYoqepTdizHn7PjhFppEZjcwXVUwEsQvo6Ss9OMAgEKUDVbIk6k%2Fgmv2qNIAqsnAL8%2FRwVoBLIEB%2BsrbU61as9B%2BSWhBaGdXJgfETAz7FOxFZ9HidRk0y%2Ba6j3NYNPo0jzfKdJk2%2BKUOdfe%2FSzNSoSEH2BIyJWpVmsakeYo6OcBe3cdh8RUk2wp4eqFreadJTFG%2Bcn5a4nXdsrg7VVmTGjB9Jw2ZAzTH5Tl6NPOb7de%2BNfmbRK1yuSng6apjqYq6oR2jHFc9xzoBJfCEQSd2Ee9leqflrM3aNa7YkF6pHzX6oPqPhIhDYJED%2Fu53XC1EDCY5NqGBjqkAX5XCGspnZrXA5mrBdlmr7i%2Fs6Fhlz3rMm7Qlune%2B0YxiMDXbZ%2FQvDy3qgJ9TWa6%2F6P9qeXuaNI7iR%2B%2Bo%2BUQ4w9pzQwT6cVZn1AWurL7%2FMvTEeGn3lKKbDESaD4r%2FE0Ui78qZKaJVM6YNEmrBY3goazzmhnFOl%2FSnz9uLytevbnZ9GBB%2BmEFC07cBr2wfSukRvufLX5MDLQrkOCf3x5ttscqHVPx&amp;X-Amz-Signature=b21ff619e53036c35d6de80c43dae8b34c9598d52368da9501f3fca1e35aadf5"</span>,
+    <span class="s2">"isin"</span>: <span class="s2">"US88160R1014"</span>,
+    <span class="s2">"wkn"</span>: <span class="s2">"88160R101"</span>,
+    <span class="s2">"product_class"</span>: <span class="s2">"STOCK"</span>,
+    <span class="s2">"issuance_currency"</span>: <span class="s2">"USD"</span>,
+    <span class="s2">"aggregation_time_span"</span>: <span class="s2">"LAST_MONTH"</span>,
+    <span class="s2">"aggregations"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"asset_volume"</span>: <span class="s2">"0.0000142"</span>,
+        <span class="s2">"trading_pair_volume"</span>: <span class="s2">"0.0099481"</span>,
+        <span class="s2">"avg"</span>: <span class="s2">"700.5704225"</span>,
+        <span class="s2">"high"</span>: <span class="s2">"700.5701160"</span>,
+        <span class="s2">"low"</span>: <span class="s2">"700.5701160"</span>,
+        <span class="s2">"open"</span>: <span class="s2">"700.5701160"</span>,
+        <span class="s2">"close"</span>: <span class="s2">"700.5701160"</span>,
+        <span class="s2">"trade_count"</span>: 1,
+        <span class="s2">"timestamp"</span>: <span class="s2">"2021-06-25T10:00:00"</span>
+      <span class="o">}</span>,
+      ...  
+    <span class="o">]</span>,
+    <span class="s2">"can_be_traded"</span>: <span class="nb">true</span>
+    <span class="o">}</span>,
+    ...
+  <span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/assets/assets/?trading_pair=USDC&amp;time_span=LAST_HOUR</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output:</span>
+<span class="p">{</span>
+  <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">next</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">previous</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">results</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+   <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">is_trading_pair</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TSLA</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">unicode</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">issuer_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DSQ AG</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">issuer</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GBRDHSZL4ZKOI2PTUMM53N3NICZXC5OX3KPCD4WD4NG4XGCBC2ZA3KAG</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">custodian_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Mason PrivatBank</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">asset_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">credit_alphanum4</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">display_decimals</span><span class="dl">"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tesla</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">company_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tesla, Inc.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tesla, Inc., designs, develops, manufactures and sells fully electric vehicles, and energy storage systems, as well as installs, operates and maintains solar and energy storage products. The Company operates through two segments: Automotive, and Energy generation and storage.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">image</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://dstoq-prod-core-storage.s3.amazonaws.com/equities.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIASP7JDUVZ75NLNLGF%2F20210626%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210626T090745Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGUaCWV1LXdlc3QtMSJIMEYCIQC2wllKb4%2BGCmiQmc6aneGCFg%2Bf%2BgPkT4ASNZq4N3FVvgIhAIykJM5CEnvNfyjP8iBWvIr%2BqX8sgtvWY9uuHAGIo2kgKosECD4QARoMMTcxNzUwNjk2MzA3Igz4i3pIVLp8Z%2FCFLyQq6AMbvpJGF9FhqaRgI%2FlZ6m1vvu0o02lh4MlgDiA9nBcYyYqRaev6UtL2udMaV3KTac83B13cRBMt%2BvLoZfed80gTSm38FbKTKRV9e%2FbfSWVCUcOlAlC0zetD0pYe9pHBraDpyKwjte7GQkZrSsGWCqnzFjP21WAX3djoXTy2fuNR%2FA%2BrWRFstjA0uqQrA5Av4OzUqB3Z4RatzDxy90iNpTgDRTYYAmnx8U%2BDZm7a9DErM2KUhu9J8Q3qCnHukQI70HWLfXR0tsc%2FUDGemDPvw8M6rBYsgFfBoPH015qD27i2R%2B0eNy4KFZIKaPnYF7k%2FzgE%2BsW0Mkr3y0RYoqepTdizHn7PjhFppEZjcwXVUwEsQvo6Ss9OMAgEKUDVbIk6k%2Fgmv2qNIAqsnAL8%2FRwVoBLIEB%2BsrbU61as9B%2BSWhBaGdXJgfETAz7FOxFZ9HidRk0y%2Ba6j3NYNPo0jzfKdJk2%2BKUOdfe%2FSzNSoSEH2BIyJWpVmsakeYo6OcBe3cdh8RUk2wp4eqFreadJTFG%2Bcn5a4nXdsrg7VVmTGjB9Jw2ZAzTH5Tl6NPOb7de%2BNfmbRK1yuSng6apjqYq6oR2jHFc9xzoBJfCEQSd2Ee9leqflrM3aNa7YkF6pHzX6oPqPhIhDYJED%2Fu53XC1EDCY5NqGBjqkAX5XCGspnZrXA5mrBdlmr7i%2Fs6Fhlz3rMm7Qlune%2B0YxiMDXbZ%2FQvDy3qgJ9TWa6%2F6P9qeXuaNI7iR%2B%2Bo%2BUQ4w9pzQwT6cVZn1AWurL7%2FMvTEeGn3lKKbDESaD4r%2FE0Ui78qZKaJVM6YNEmrBY3goazzmhnFOl%2FSnz9uLytevbnZ9GBB%2BmEFC07cBr2wfSukRvufLX5MDLQrkOCf3x5ttscqHVPx&amp;X-Amz-Signature=b21ff619e53036c35d6de80c43dae8b34c9598d52368da9501f3fca1e35aadf5</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">isin</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">US88160R1014</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">wkn</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">88160R101</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">product_class</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">STOCK</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">issuance_currency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USD</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">aggregation_time_span</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LAST_MONTH</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">aggregations</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">asset_volume</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.0000142</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">trading_pair_volume</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.0099481</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">avg</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">700.5704225</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">700.5701160</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">700.5701160</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">700.5701160</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">700.5701160</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">trade_count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">timestamp</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2021-06-25T10:00:00</span><span class="dl">"</span>
+      <span class="p">},</span>
+      <span class="p">...</span>  
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">can_be_traded</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.dstoq.com/core/assets/assets/?trading_pair=USDC&amp;time_span=LAST_HOUR'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output:
+</span><span class="p">{</span>
+  <span class="s">"count"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+  <span class="s">"next"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s">"previous"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s">"results"</span><span class="p">:</span> <span class="p">[</span>
+   <span class="p">{</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"is_trading_pair"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s">"code"</span><span class="p">:</span> <span class="s">"TSLA"</span><span class="p">,</span>
+    <span class="s">"unicode"</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+    <span class="s">"issuer_name"</span><span class="p">:</span> <span class="s">"DSQ AG"</span><span class="p">,</span>
+    <span class="s">"issuer"</span><span class="p">:</span> <span class="s">"GBRDHSZL4ZKOI2PTUMM53N3NICZXC5OX3KPCD4WD4NG4XGCBC2ZA3KAG"</span><span class="p">,</span>
+    <span class="s">"custodian_name"</span><span class="p">:</span> <span class="s">"Mason PrivatBank"</span><span class="p">,</span>
+    <span class="s">"asset_type"</span><span class="p">:</span> <span class="s">"credit_alphanum4"</span><span class="p">,</span>
+    <span class="s">"display_decimals"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="s">"Tesla"</span><span class="p">,</span>
+    <span class="s">"company_name"</span><span class="p">:</span> <span class="s">"Tesla, Inc."</span><span class="p">,</span>
+    <span class="s">"desc"</span><span class="p">:</span> <span class="s">"Tesla, Inc., designs, develops, manufactures and sells fully electric vehicles, and energy storage systems, as well as installs, operates and maintains solar and energy storage products. The Company operates through two segments: Automotive, and Energy generation and storage."</span><span class="p">,</span>
+    <span class="s">"image"</span><span class="p">:</span> <span class="s">"https://dstoq-prod-core-storage.s3.amazonaws.com/equities.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIASP7JDUVZ75NLNLGF%2F20210626%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210626T090745Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGUaCWV1LXdlc3QtMSJIMEYCIQC2wllKb4%2BGCmiQmc6aneGCFg%2Bf%2BgPkT4ASNZq4N3FVvgIhAIykJM5CEnvNfyjP8iBWvIr%2BqX8sgtvWY9uuHAGIo2kgKosECD4QARoMMTcxNzUwNjk2MzA3Igz4i3pIVLp8Z%2FCFLyQq6AMbvpJGF9FhqaRgI%2FlZ6m1vvu0o02lh4MlgDiA9nBcYyYqRaev6UtL2udMaV3KTac83B13cRBMt%2BvLoZfed80gTSm38FbKTKRV9e%2FbfSWVCUcOlAlC0zetD0pYe9pHBraDpyKwjte7GQkZrSsGWCqnzFjP21WAX3djoXTy2fuNR%2FA%2BrWRFstjA0uqQrA5Av4OzUqB3Z4RatzDxy90iNpTgDRTYYAmnx8U%2BDZm7a9DErM2KUhu9J8Q3qCnHukQI70HWLfXR0tsc%2FUDGemDPvw8M6rBYsgFfBoPH015qD27i2R%2B0eNy4KFZIKaPnYF7k%2FzgE%2BsW0Mkr3y0RYoqepTdizHn7PjhFppEZjcwXVUwEsQvo6Ss9OMAgEKUDVbIk6k%2Fgmv2qNIAqsnAL8%2FRwVoBLIEB%2BsrbU61as9B%2BSWhBaGdXJgfETAz7FOxFZ9HidRk0y%2Ba6j3NYNPo0jzfKdJk2%2BKUOdfe%2FSzNSoSEH2BIyJWpVmsakeYo6OcBe3cdh8RUk2wp4eqFreadJTFG%2Bcn5a4nXdsrg7VVmTGjB9Jw2ZAzTH5Tl6NPOb7de%2BNfmbRK1yuSng6apjqYq6oR2jHFc9xzoBJfCEQSd2Ee9leqflrM3aNa7YkF6pHzX6oPqPhIhDYJED%2Fu53XC1EDCY5NqGBjqkAX5XCGspnZrXA5mrBdlmr7i%2Fs6Fhlz3rMm7Qlune%2B0YxiMDXbZ%2FQvDy3qgJ9TWa6%2F6P9qeXuaNI7iR%2B%2Bo%2BUQ4w9pzQwT6cVZn1AWurL7%2FMvTEeGn3lKKbDESaD4r%2FE0Ui78qZKaJVM6YNEmrBY3goazzmhnFOl%2FSnz9uLytevbnZ9GBB%2BmEFC07cBr2wfSukRvufLX5MDLQrkOCf3x5ttscqHVPx&amp;X-Amz-Signature=b21ff619e53036c35d6de80c43dae8b34c9598d52368da9501f3fca1e35aadf5"</span><span class="p">,</span>
+    <span class="s">"isin"</span><span class="p">:</span> <span class="s">"US88160R1014"</span><span class="p">,</span>
+    <span class="s">"wkn"</span><span class="p">:</span> <span class="s">"88160R101"</span><span class="p">,</span>
+    <span class="s">"product_class"</span><span class="p">:</span> <span class="s">"STOCK"</span><span class="p">,</span>
+    <span class="s">"issuance_currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
+    <span class="s">"aggregation_time_span"</span><span class="p">:</span> <span class="s">"LAST_MONTH"</span><span class="p">,</span>
+    <span class="s">"aggregations"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s">"asset_volume"</span><span class="p">:</span> <span class="s">"0.0000142"</span><span class="p">,</span>
+        <span class="s">"trading_pair_volume"</span><span class="p">:</span> <span class="s">"0.0099481"</span><span class="p">,</span>
+        <span class="s">"avg"</span><span class="p">:</span> <span class="s">"700.5704225"</span><span class="p">,</span>
+        <span class="s">"high"</span><span class="p">:</span> <span class="s">"700.5701160"</span><span class="p">,</span>
+        <span class="s">"low"</span><span class="p">:</span> <span class="s">"700.5701160"</span><span class="p">,</span>
+        <span class="s">"open"</span><span class="p">:</span> <span class="s">"700.5701160"</span><span class="p">,</span>
+        <span class="s">"close"</span><span class="p">:</span> <span class="s">"700.5701160"</span><span class="p">,</span>
+        <span class="s">"trade_count"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"timestamp"</span><span class="p">:</span> <span class="s">"2021-06-25T10:00:00"</span>
+      <span class="p">},</span>
+      <span class="p">...</span>  
+    <span class="p">],</span>
+    <span class="s">"can_be_traded"</span><span class="p">:</span> <span class="n">true</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This endpoints returns a list of all available assets on the DSTOQ platform.</p>
+
+<p>It&#39;s paginated and gives you back previous and next urls (or <code>null</code> if they don&#39;t exist) along with the count.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p><code>GET https://api.dstoq.com/core/assets/assets/</code></p>
+
+<p><strong>URL Params</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trading_pair</td>
+<td>The code of an asset that has <code>is_trading_pair</code> set to true. If not set, fields that require a complete trading pair won&#39;t populate (e.g. aggregations)</td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td>time_span</td>
+<td>The time span as string that should be reflecte in aggregations, options are <code>LAST_MONTH, LAST_WEEK, LAST_DAY, LAST_HOUR, LAST_YEAR</code>.</td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td>trading_pairs_only</td>
+<td>A value of <code>1</code> will return only trading pairs</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>securities_only</td>
+<td>A value of <code>1</code> will return only securities</td>
+<td><code>0</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Each asset has a details endpoint like `https://api.dstoq.com/core/assets/assets/TSLA/` that as well accepts `trading_pair` and `time_span` URL params with the same output.
+</aside>
+<h2 id='orderbook'>Orderbook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.dstoq.com/core/assets/assets/TSLA/orderbook/?trading_pair<span class="o">=</span>USDC
+
+<span class="c"># output</span>
+<span class="o">{</span>
+   <span class="s2">"bids"</span>:[
+      <span class="o">{</span>
+         <span class="s2">"price"</span>:<span class="s2">"682.8967320"</span>,
+         <span class="s2">"amount"</span>:<span class="s2">"0.0916524"</span>
+      <span class="o">}</span>,
+      ...
+   <span class="o">]</span>,
+   <span class="s2">"asks"</span>:[
+      <span class="o">{</span>
+         <span class="s2">"price"</span>:<span class="s2">"683.4432680"</span>,
+         <span class="s2">"amount"</span>:<span class="s2">"0.0685818"</span>
+      <span class="o">}</span>,
+      ...
+   <span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/assets/assets/TSLA/orderbook/?trading_pair=USDC</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output</span>
+<span class="p">{</span>
+  <span class="dl">"</span><span class="s2">bids</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.0030390</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2905.9551378</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="dl">"</span><span class="s2">asks</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.0031372</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2.3022122</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.dstoq.com/core/assets/assets/TSLA/orderbook/?trading_pair=USDC'</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="p">{</span>
+   <span class="s">"bids"</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">"price"</span><span class="p">:</span><span class="s">"682.8967320"</span><span class="p">,</span>
+         <span class="s">"amount"</span><span class="p">:</span><span class="s">"0.0916524"</span>
+      <span class="p">},</span>
+      <span class="p">...</span>
+   <span class="p">],</span>
+   <span class="s">"asks"</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">"price"</span><span class="p">:</span><span class="s">"683.4432680"</span><span class="p">,</span>
+         <span class="s">"amount"</span><span class="p">:</span><span class="s">"0.0685818"</span>
+      <span class="p">},</span>
+      <span class="p">...</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>An orderbook is just a list of currents bids and asks for a <code>trading pair</code> against a <code>security</code>. Hence, one of your sides (<code>buying</code> or <code>selling</code>) needs to be a trading pair. Our samples are for USDC (a trading pair) against TSLA (a security).</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p><code>GET https://api.dstoq.com/core/assets/assets/&lt;asset_code&gt;/orderbook/?trading_pair=USDC</code></p>
+
+<p><strong>URL Params</strong></p>
+
+<p>All required URL params can be retrieved from the <code>/core/assets</code> call described above.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trading_pair</td>
+<td>Code of the base currency that completes the trading pair</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+<h1 id='wallet'>Wallet</h1><h2 id='balances'>Balances</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Authorization: JWT </span><span class="nv">$TOKEN</span><span class="s2">"</span> https://api.dstoq.com/core/accounts/accounts/me/balances/<span class="se">\?</span>trading_pair<span class="se">\=</span>USDC
+
+<span class="c"># output</span>
+<span class="o">[</span>
+  <span class="o">{</span>
+        <span class="s2">"balance"</span>: <span class="s2">"0.4409302"</span>,
+        <span class="s2">"buying_liabilities"</span>: <span class="s2">"0.2577763"</span>,
+        <span class="s2">"code"</span>: <span class="s2">"FB"</span>,
+        <span class="s2">"estimated_total"</span>: <span class="s2">"150.520342374"</span>,
+        <span class="s2">"image"</span>: <span class="s2">"https://dstoq-prod-core-storage.s3.amazonaws.com/equities_Rpa76lQ.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIASP7JDUVZ75NLNLGF%2F20210626%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210626T092133Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGUaCWV1LXdlc3QtMSJIMEYCIQC2wllKb4%2BGCmiQmc6aneGCFg%2Bf%2BgPkT4ASNZq4N3FVvgIhAIykJM5CEnvNfyjP8iBWvIr%2BqX8sgtvWY9uuHAGIo2kgKosECD4QARoMMTcxNzUwNjk2MzA3Igz4i3pIVLp8Z%2FCFLyQq6AMbvpJGF9FhqaRgI%2FlZ6m1vvu0o02lh4MlgDiA9nBcYyYqRaev6UtL2udMaV3KTac83B13cRBMt%2BvLoZfed80gTSm38FbKTKRV9e%2FbfSWVCUcOlAlC0zetD0pYe9pHBraDpyKwjte7GQkZrSsGWCqnzFjP21WAX3djoXTy2fuNR%2FA%2BrWRFstjA0uqQrA5Av4OzUqB3Z4RatzDxy90iNpTgDRTYYAmnx8U%2BDZm7a9DErM2KUhu9J8Q3qCnHukQI70HWLfXR0tsc%2FUDGemDPvw8M6rBYsgFfBoPH015qD27i2R%2B0eNy4KFZIKaPnYF7k%2FzgE%2BsW0Mkr3y0RYoqepTdizHn7PjhFppEZjcwXVUwEsQvo6Ss9OMAgEKUDVbIk6k%2Fgmv2qNIAqsnAL8%2FRwVoBLIEB%2BsrbU61as9B%2BSWhBaGdXJgfETAz7FOxFZ9HidRk0y%2Ba6j3NYNPo0jzfKdJk2%2BKUOdfe%2FSzNSoSEH2BIyJWpVmsakeYo6OcBe3cdh8RUk2wp4eqFreadJTFG%2Bcn5a4nXdsrg7VVmTGjB9Jw2ZAzTH5Tl6NPOb7de%2BNfmbRK1yuSng6apjqYq6oR2jHFc9xzoBJfCEQSd2Ee9leqflrM3aNa7YkF6pHzX6oPqPhIhDYJED%2Fu53XC1EDCY5NqGBjqkAX5XCGspnZrXA5mrBdlmr7i%2Fs6Fhlz3rMm7Qlune%2B0YxiMDXbZ%2FQvDy3qgJ9TWa6%2F6P9qeXuaNI7iR%2B%2Bo%2BUQ4w9pzQwT6cVZn1AWurL7%2FMvTEeGn3lKKbDESaD4r%2FE0Ui78qZKaJVM6YNEmrBY3goazzmhnFOl%2FSnz9uLytevbnZ9GBB%2BmEFC07cBr2wfSukRvufLX5MDLQrkOCf3x5ttscqHVPx&amp;X-Amz-Signature=c908c160ac8488ac72a6c0720690ab251c4542c6faa564263e56a73450901ead"</span>,
+        <span class="s2">"is_trading_pair"</span>: <span class="nb">false</span>,
+        <span class="s2">"name"</span>: <span class="s2">"Facebook"</span>,
+        <span class="s2">"selling_liabilities"</span>: <span class="s2">"0.3968371"</span>,
+        <span class="s2">"type"</span>: <span class="s2">"asset"</span>
+    <span class="o">}</span>,
+    ...
+<span class="o">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="s2">`JWT </span><span class="p">${</span><span class="nx">TOKEN</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/accounts/accounts/me/balances/?trading_pair=USDC</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+  <span class="c1">// output</span>
+  <span class="p">[</span>
+  <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.4409302</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">buying_liabilities</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.2577763</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">FB</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">estimated_total</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">150.520342374</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">image</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://dstoq-prod-core-storage.s3.amazonaws.com/equities_Rpa76lQ.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIASP7JDUVZ75NLNLGF%2F20210626%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210626T092133Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGUaCWV1LXdlc3QtMSJIMEYCIQC2wllKb4%2BGCmiQmc6aneGCFg%2Bf%2BgPkT4ASNZq4N3FVvgIhAIykJM5CEnvNfyjP8iBWvIr%2BqX8sgtvWY9uuHAGIo2kgKosECD4QARoMMTcxNzUwNjk2MzA3Igz4i3pIVLp8Z%2FCFLyQq6AMbvpJGF9FhqaRgI%2FlZ6m1vvu0o02lh4MlgDiA9nBcYyYqRaev6UtL2udMaV3KTac83B13cRBMt%2BvLoZfed80gTSm38FbKTKRV9e%2FbfSWVCUcOlAlC0zetD0pYe9pHBraDpyKwjte7GQkZrSsGWCqnzFjP21WAX3djoXTy2fuNR%2FA%2BrWRFstjA0uqQrA5Av4OzUqB3Z4RatzDxy90iNpTgDRTYYAmnx8U%2BDZm7a9DErM2KUhu9J8Q3qCnHukQI70HWLfXR0tsc%2FUDGemDPvw8M6rBYsgFfBoPH015qD27i2R%2B0eNy4KFZIKaPnYF7k%2FzgE%2BsW0Mkr3y0RYoqepTdizHn7PjhFppEZjcwXVUwEsQvo6Ss9OMAgEKUDVbIk6k%2Fgmv2qNIAqsnAL8%2FRwVoBLIEB%2BsrbU61as9B%2BSWhBaGdXJgfETAz7FOxFZ9HidRk0y%2Ba6j3NYNPo0jzfKdJk2%2BKUOdfe%2FSzNSoSEH2BIyJWpVmsakeYo6OcBe3cdh8RUk2wp4eqFreadJTFG%2Bcn5a4nXdsrg7VVmTGjB9Jw2ZAzTH5Tl6NPOb7de%2BNfmbRK1yuSng6apjqYq6oR2jHFc9xzoBJfCEQSd2Ee9leqflrM3aNa7YkF6pHzX6oPqPhIhDYJED%2Fu53XC1EDCY5NqGBjqkAX5XCGspnZrXA5mrBdlmr7i%2Fs6Fhlz3rMm7Qlune%2B0YxiMDXbZ%2FQvDy3qgJ9TWa6%2F6P9qeXuaNI7iR%2B%2Bo%2BUQ4w9pzQwT6cVZn1AWurL7%2FMvTEeGn3lKKbDESaD4r%2FE0Ui78qZKaJVM6YNEmrBY3goazzmhnFOl%2FSnz9uLytevbnZ9GBB%2BmEFC07cBr2wfSukRvufLX5MDLQrkOCf3x5ttscqHVPx&amp;X-Amz-Signature=c908c160ac8488ac72a6c0720690ab251c4542c6faa564263e56a73450901ead</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">is_trading_pair</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Facebook</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">selling_liabilities</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.3968371</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">asset</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+<span class="p">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+  <span class="s">'https://api.dstoq.com/core/accounts/accounts/me/balances/?trading_pair=USDC'</span><span class="p">,</span>
+  <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="sa">f</span><span class="s">'JWT </span><span class="si">{</span><span class="n">TOKEN</span><span class="si">}</span><span class="s">'</span><span class="p">}</span>
+<span class="p">).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="p">[</span>
+  <span class="p">{</span>
+        <span class="s">"balance"</span><span class="p">:</span> <span class="s">"0.4409302"</span><span class="p">,</span>
+        <span class="s">"buying_liabilities"</span><span class="p">:</span> <span class="s">"0.2577763"</span><span class="p">,</span>
+        <span class="s">"code"</span><span class="p">:</span> <span class="s">"FB"</span><span class="p">,</span>
+        <span class="s">"estimated_total"</span><span class="p">:</span> <span class="s">"150.520342374"</span><span class="p">,</span>
+        <span class="s">"image"</span><span class="p">:</span> <span class="s">"https://dstoq-prod-core-storage.s3.amazonaws.com/equities_Rpa76lQ.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIASP7JDUVZ75NLNLGF%2F20210626%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210626T092133Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGUaCWV1LXdlc3QtMSJIMEYCIQC2wllKb4%2BGCmiQmc6aneGCFg%2Bf%2BgPkT4ASNZq4N3FVvgIhAIykJM5CEnvNfyjP8iBWvIr%2BqX8sgtvWY9uuHAGIo2kgKosECD4QARoMMTcxNzUwNjk2MzA3Igz4i3pIVLp8Z%2FCFLyQq6AMbvpJGF9FhqaRgI%2FlZ6m1vvu0o02lh4MlgDiA9nBcYyYqRaev6UtL2udMaV3KTac83B13cRBMt%2BvLoZfed80gTSm38FbKTKRV9e%2FbfSWVCUcOlAlC0zetD0pYe9pHBraDpyKwjte7GQkZrSsGWCqnzFjP21WAX3djoXTy2fuNR%2FA%2BrWRFstjA0uqQrA5Av4OzUqB3Z4RatzDxy90iNpTgDRTYYAmnx8U%2BDZm7a9DErM2KUhu9J8Q3qCnHukQI70HWLfXR0tsc%2FUDGemDPvw8M6rBYsgFfBoPH015qD27i2R%2B0eNy4KFZIKaPnYF7k%2FzgE%2BsW0Mkr3y0RYoqepTdizHn7PjhFppEZjcwXVUwEsQvo6Ss9OMAgEKUDVbIk6k%2Fgmv2qNIAqsnAL8%2FRwVoBLIEB%2BsrbU61as9B%2BSWhBaGdXJgfETAz7FOxFZ9HidRk0y%2Ba6j3NYNPo0jzfKdJk2%2BKUOdfe%2FSzNSoSEH2BIyJWpVmsakeYo6OcBe3cdh8RUk2wp4eqFreadJTFG%2Bcn5a4nXdsrg7VVmTGjB9Jw2ZAzTH5Tl6NPOb7de%2BNfmbRK1yuSng6apjqYq6oR2jHFc9xzoBJfCEQSd2Ee9leqflrM3aNa7YkF6pHzX6oPqPhIhDYJED%2Fu53XC1EDCY5NqGBjqkAX5XCGspnZrXA5mrBdlmr7i%2Fs6Fhlz3rMm7Qlune%2B0YxiMDXbZ%2FQvDy3qgJ9TWa6%2F6P9qeXuaNI7iR%2B%2Bo%2BUQ4w9pzQwT6cVZn1AWurL7%2FMvTEeGn3lKKbDESaD4r%2FE0Ui78qZKaJVM6YNEmrBY3goazzmhnFOl%2FSnz9uLytevbnZ9GBB%2BmEFC07cBr2wfSukRvufLX5MDLQrkOCf3x5ttscqHVPx&amp;X-Amz-Signature=c908c160ac8488ac72a6c0720690ab251c4542c6faa564263e56a73450901ead"</span><span class="p">,</span>
+        <span class="s">"is_trading_pair"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s">"name"</span><span class="p">:</span> <span class="s">"Facebook"</span><span class="p">,</span>
+        <span class="s">"selling_liabilities"</span><span class="p">:</span> <span class="s">"0.3968371"</span><span class="p">,</span>
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"asset"</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>You can find out about the current balances that the user has in his or her wallet by querying this endpoint.</p>
+
+<p>Useful information such as liabillities (part of the balance that is in pending offers) images and so on are included.</p>
+
+<p><strong>URL Params</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trading_pair</td>
+<td>If added, the <code>estimated_total</code> will give you the balance in the given base currecny.</td>
+<td><code>-</code></td>
+</tr>
+</tbody></table>
+
+<p><strong>HTTP Request</strong></p>
+
+<p><code>GET https://api.dstoq.com/core/accounts/me/balances/</code></p>
+<h2 id='offers'>Offers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Authorization: JWT </span><span class="nv">$TOKEN</span><span class="s2">"</span> https://api.dstoq.com/core/accounts/accounts/me/offers/
+
+<span class="c"># output</span>
+<span class="o">{</span>
+    <span class="s2">"next_cursor"</span>: <span class="s2">"663182819"</span>,
+    <span class="s2">"offers"</span>: <span class="o">[</span>
+        <span class="o">{</span>
+            <span class="s2">"amount"</span>: <span class="s2">"1.6147102"</span>,
+            <span class="s2">"asset"</span>: <span class="s2">"D5BK"</span>,
+            <span class="s2">"asset_name"</span>: <span class="s2">"EU Property  Fund"</span>,
+            <span class="s2">"offer_id"</span>: <span class="s2">"663182843"</span>,
+            <span class="s2">"offer_type"</span>: <span class="s2">"buy"</span>,
+            <span class="s2">"price"</span>: <span class="s2">"36.9304857"</span>,
+            <span class="s2">"timestamp"</span>: <span class="s2">"2021-06-26T09:26:49Z"</span>,
+            <span class="s2">"trading_pair"</span>: <span class="s2">"USDC"</span>
+        <span class="o">}</span>,
+        ...
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/accounts/accounts/me/offers/</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output</span>
+<span class="p">{</span>
+    <span class="dl">"</span><span class="s2">next_cursor</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">663182819</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">offers</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1.6147102</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">asset</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">D5BK</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">asset_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">EU Property  Fund</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">offer_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">663182843</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">offer_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">buy</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">36.9304857</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">timestamp</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2021-06-26T09:26:49Z</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">trading_pair</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDC</span><span class="dl">"</span>
+        <span class="p">},</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.dstoq.com/core/accounts/accounts/me/offers/'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="p">{</span>
+    <span class="s">"next_cursor"</span><span class="p">:</span> <span class="s">"663182819"</span><span class="p">,</span>
+    <span class="s">"offers"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"amount"</span><span class="p">:</span> <span class="s">"1.6147102"</span><span class="p">,</span>
+            <span class="s">"asset"</span><span class="p">:</span> <span class="s">"D5BK"</span><span class="p">,</span>
+            <span class="s">"asset_name"</span><span class="p">:</span> <span class="s">"EU Property  Fund"</span><span class="p">,</span>
+            <span class="s">"offer_id"</span><span class="p">:</span> <span class="s">"663182843"</span><span class="p">,</span>
+            <span class="s">"offer_type"</span><span class="p">:</span> <span class="s">"buy"</span><span class="p">,</span>
+            <span class="s">"price"</span><span class="p">:</span> <span class="s">"36.9304857"</span><span class="p">,</span>
+            <span class="s">"timestamp"</span><span class="p">:</span> <span class="s">"2021-06-26T09:26:49Z"</span><span class="p">,</span>
+            <span class="s">"trading_pair"</span><span class="p">:</span> <span class="s">"USDC"</span>
+        <span class="p">},</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You can use this endpoint to retrieve the outstanding offers for this account.</p>
+
+<p><strong>URL Params</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cursor</td>
+<td>The api gives a next_cursor and/or a prev_cursur to retrieve the next page of results.</td>
+<td><code>-</code></td>
+</tr>
+</tbody></table>
+
+<p>HTTP Request</p>
+
+<p><code>GET https://api.dstoq.com/core/accounts/me/offers/</code></p>
+<h2 id='trades'>Trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Authorization: JWT </span><span class="nv">$TOKEN</span><span class="s2">"</span> https://api.dstoq.com/core/accounts/accounts/me/trades/
+
+<span class="c"># output</span>
+<span class="o">{</span>
+    <span class="s2">"next_cursor"</span>: <span class="s2">"154950797858623518-0"</span>,
+    <span class="s2">"prev_cursor"</span>: <span class="s2">"154959340548751390-0"</span>,
+    <span class="s2">"trades"</span>: <span class="o">[</span>
+        <span class="o">{</span>
+            <span class="s2">"amount"</span>: <span class="s2">"0.0000467"</span>,
+            <span class="s2">"asset"</span>: <span class="s2">"GME"</span>,
+            <span class="s2">"asset_name"</span>: <span class="s2">"GameStop"</span>,
+            <span class="s2">"offer_type"</span>: <span class="s2">"sell"</span>,
+            <span class="s2">"price"</span>: <span class="s2">"213.0151720"</span>,
+            <span class="s2">"timestamp"</span>: <span class="s2">"2021-06-26T08:47:28Z"</span>,
+            <span class="s2">"trading_pair"</span>: <span class="s2">"USDC"</span>
+        <span class="o">}</span>,
+        ...
+    <span class="o">]</span>
+<span class="o">}</span>  
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/accounts/accounts/me/trades/</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+
+<span class="c1">// output</span>
+<span class="p">{</span>
+    <span class="dl">"</span><span class="s2">next_cursor</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">154950797858623518-0</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">prev_cursor</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">154959340548751390-0</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">trades</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.0000467</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">asset</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GME</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">asset_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GameStop</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">offer_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sell</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">213.0151720</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">timestamp</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2021-06-26T08:47:28Z</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">trading_pair</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDC</span><span class="dl">"</span>
+        <span class="p">},</span>
+        <span class="p">...</span>
+    <span class="p">]</span>
+<span class="p">}</span>  
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.dstoq.com/core/accounts/accounts/me/trades/'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="p">{</span>
+    <span class="s">"next_cursor"</span><span class="p">:</span> <span class="s">"154950797858623518-0"</span><span class="p">,</span>
+    <span class="s">"prev_cursor"</span><span class="p">:</span> <span class="s">"154959340548751390-0"</span><span class="p">,</span>
+    <span class="s">"trades"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"amount"</span><span class="p">:</span> <span class="s">"0.0000467"</span><span class="p">,</span>
+            <span class="s">"asset"</span><span class="p">:</span> <span class="s">"GME"</span><span class="p">,</span>
+            <span class="s">"asset_name"</span><span class="p">:</span> <span class="s">"GameStop"</span><span class="p">,</span>
+            <span class="s">"offer_type"</span><span class="p">:</span> <span class="s">"sell"</span><span class="p">,</span>
+            <span class="s">"price"</span><span class="p">:</span> <span class="s">"213.0151720"</span><span class="p">,</span>
+            <span class="s">"timestamp"</span><span class="p">:</span> <span class="s">"2021-06-26T08:47:28Z"</span><span class="p">,</span>
+            <span class="s">"trading_pair"</span><span class="p">:</span> <span class="s">"USDC"</span>
+        <span class="p">},</span>
+        <span class="p">...</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You can use this endpoint to retrieve the past trades for this account.</p>
+
+<p><strong>URL Params</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cursor</td>
+<td>The api gives a next_cursor to retrieve the next page of results.</td>
+<td><code>-</code></td>
+</tr>
+</tbody></table>
+
+<p>HTTP Request</p>
+
+<p><code>GET https://api.dstoq.com/core/accounts/me/trades/</code></p>
+<h1 id='trading'>Trading</h1><h2 id='submitting-an-order'>Submitting an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f"</span> <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"offer_type": "buy", "asset": "TSLA", "trading_pair": "USDC", "price": "412.12", "amount": "0.1"}'</span> https://api.dstoq.com/core/sign/offer/
+
+<span class="c"># Take the result an head to https://accountviewer.stellar.org/ to broadcast it to the stellar network.</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">StellarSdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">stellar-sdk</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StellarSdk</span><span class="p">.</span><span class="nx">Server</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://horizon-testnet.stellar.org</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ4ODU4NTI4LCJqdGkiOiI3ZjcxZTIwYzE1YjE0MDJlODkyZGRkMTdlMWViODYwZCIsInVzZXJfaWQiOjEsInNjb3BlcyI6WyJmb28iLCJiYXIiLCJiYXoiXSwiaXNfc3RhZmYiOnRydWUsImlzX3N1cGVydXNlciI6dHJ1ZSwiYWRkaXRpb25hbCI6ImRhdGEifQ.fkcrKCBlmX4oDsCHy2CUgp-CEv_z2uFOvkrgZilQowurS0fQDrQDtmJu59JJJ4eCbSgLjo3HJovG6-UJ8B3gGwIOpP3mmkijvx-IDeJ44MOIzkGVO2MvhQhHSUCc2U0AQzgQRUhlI6zD7OUn5Vm8LN9AY0E3gg-OS3XmxmFN-MWC_QC93viT5f</span><span class="dl">'</span><span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.dstoq.com/core/sign/offer/</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="c1">// can be 'buy' or 'sell'</span>
+    <span class="na">offer_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">buy</span><span class="dl">'</span><span class="p">,</span>
+    <span class="c1">// Any asset, can as well be one that can be used as trading pair (e.g. USD as asset against EUR is a valid trading pair)</span>
+    <span class="na">asset</span><span class="p">:</span> <span class="dl">'</span><span class="s1">TSLA</span><span class="dl">'</span><span class="p">,</span>
+    <span class="c1">// complete the trading pair</span>
+    <span class="na">trading_pair</span><span class="p">:</span> <span class="dl">'</span><span class="s1">USDC</span><span class="dl">'</span><span class="p">,</span>
+    <span class="c1">// The price is ALWAYS determined in terms of the trading pair (base currency / asset) -</span>
+    <span class="c1">// for 1 TSLA we are bidding 745.1321252 USD</span>
+    <span class="na">price</span><span class="p">:</span> <span class="dl">'</span><span class="s1">745.1321252</span><span class="dl">'</span><span class="p">,</span>
+    <span class="c1">// how much tsla do we want to buy</span>
+    <span class="na">amount</span><span class="p">:</span> <span class="mf">0.1</span>
+  <span class="p">})</span>
+
+<span class="nx">tx</span> <span class="o">=</span> <span class="nx">StellarSdk</span><span class="p">.</span><span class="nx">xdr</span><span class="p">.</span><span class="nx">TransactionEnvelope</span><span class="p">.</span><span class="nx">fromXDR</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">xdr</span><span class="p">,</span> <span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">tx</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">StellarSdk</span><span class="p">.</span><span class="nx">Keypair</span><span class="p">.</span><span class="nx">fromSecret</span><span class="p">(</span><span class="nx">SECRET_PHRASE_OF_THE_USER</span><span class="p">))</span>
+<span class="k">await</span> <span class="nx">server</span><span class="p">.</span><span class="nx">submitTransaction</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">stellar_sdk</span> <span class="kn">import</span> <span class="n">Keypair</span><span class="p">,</span> <span class="n">TransactionEnvelope</span><span class="p">,</span> <span class="n">Network</span><span class="p">,</span> <span class="n">Server</span>
+
+<span class="n">keypair</span> <span class="o">=</span> <span class="n">Keypair</span><span class="p">.</span><span class="n">from_secret</span><span class="p">(</span><span class="n">SECRET_PHRASE_OF_THE_USER</span><span class="p">)</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">horizon_url</span><span class="o">=</span><span class="s">'https://horizon.stellar.org/'</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.dstoq.com/core/sign/offer/'</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="c1"># can be 'buy' or 'sell'
+</span>    <span class="s">'offer_type'</span><span class="p">:</span> <span class="s">'buy'</span><span class="p">,</span>
+    <span class="c1"># Any asset, can as well be one that can be used as trading pair (e.g. USD as asset against EUR is a valid trading pair)
+</span>    <span class="s">'asset'</span><span class="p">:</span> <span class="s">'TSLA'</span><span class="p">,</span>
+    <span class="c1"># complete the trading pair
+</span>    <span class="s">'trading_pair'</span><span class="p">:</span> <span class="s">'USDC'</span><span class="p">,</span>
+    <span class="c1"># The price is ALWAYS determined in terms of the trading pair (base currency / asset) -
+</span>    <span class="c1"># for 1 TSLA we are bidding 745.1321252 EUR
+</span>    <span class="s">'price'</span><span class="p">:</span> <span class="s">'745.1321252'</span><span class="p">,</span>
+    <span class="c1"># how much tsla do we want to buy
+</span>    <span class="s">'amount'</span><span class="p">:</span> <span class="mf">0.1</span>
+<span class="p">},</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># the payload contains an xdr - the format of the stellar network and is presigned by our service.
+</span><span class="n">tx</span> <span class="o">=</span> <span class="n">TransactionEnvelope</span><span class="p">.</span><span class="n">from_xdr</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s">'xdr'</span><span class="p">],</span> <span class="n">network_passphrase</span><span class="o">=</span><span class="n">Network</span><span class="p">.</span><span class="n">PUBLIC_NETWORK_PASSPHRASE</span><span class="p">)</span>
+
+<span class="c1"># now we must give consent for ourself by signing the transaction
+</span><span class="n">tx</span><span class="p">.</span><span class="n">sign</span><span class="p">(</span><span class="n">keypair</span><span class="p">)</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">horizon_url</span><span class="o">=</span><span class="s">'https://horizon.stellar.org/'</span><span class="p">)</span>
+<span class="n">server</span><span class="p">.</span><span class="n">submit_transaction</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
+</code></pre></div>
+<p>If you want to place a trade as a user you can simply submit to our offer endpoint. It&#39;ll give you a transaction back that you can sign using your private key and broadcast to the stellar network.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p><code>POST https://api.dstoq.com/core/sign/offer</code></p>
+
+<p><strong>JSON Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offer_type</td>
+<td>either buy or sell - from the perspective of the asset</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>the asset code that you want to sell</td>
+</tr>
+<tr>
+<td>trading_pair</td>
+<td>the base currency to complete the trading pair</td>
+</tr>
+<tr>
+<td>price</td>
+<td>the price in terms of the trading pair (base currency / asset), e.g. for 1 TSLA we are bidding 1000 USD - the price is then 1000</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>the amount of the asset you want to buy - hence the total money spend of the base currency is price times amount</td>
+</tr>
+</tbody></table>
+<h2 id='sep-8'>SEP-8</h2>
+<p>DSTOQ is as well fully compliant to the Stellar SEP-8 Standard. The SEP-8 Standard is <a href="https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0008.md">well documented</a> and implemented in wallets such as [LOBSTR(https://lobstr.co/) and <a href="https://stellarport.io/">Stellarport</a>.</p>
+
+<p>The SEP-8 endpoint does support a convenient way to onboard new customers via DSTOQs Customer Identification process.</p>
+
+<p>If your app is as home in the Stellar Universe, head over to the SEP-8 documentation as a good starting point to implement trading. </p>
+
+<aside class="notice">
+The information provided by the DSTOQ API regarding trades, offers and so on are as well available on the stellar blockchain itself. If you wnt to go that route via SEP-8 you may want to retrieve additional information from the stellar horizon blockchain. <a href="https://www.stellar.org/developers">This</a> is a good starting point.
+</aside>
+<h1 id='bring-your-own-customers'>Bring Your Own Customers</h1>
+<p>This guide will walk you from zero to hero into a full-featured whitboard trading solution with securities such as APPL, TSLA, S&amp;P 500 and more.</p>
+
+<p>If you run into problems, don&#39;t hesitate to contact support@dstoq.com. We&#39;re here to help!</p>
+<h2 id='api-setup'>API Setup</h2><div class="highlight"><pre class="highlight plaintext"><code>&gt; ssh-keygen -t rsa -b 2048 -m PEM -f jwtRS256.key
+&gt; openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
+
+token = jwt.encode({
+    'iss': ISSUER,
+    'sub': ISSUER,
+    'aud': 'DSTOQ',
+    'iat': now(),
+    'exp': now() + timedelta(days=30),
+  }, SECRET_KEY_GOES_HERE, algorithm='RS256'
+).decode()
+</code></pre></div>
+<p>In order to start integrating with DSTOQ you have to be a registered authentication provider. We need to have a small mutual contract in place and have to add you to our partner program. 
+Our partner program has only one pricing plan: <strong>PREMIUM</strong> and it&#39;s 0$ including VAT. That&#39;s right: None, null, zero, zip, nil, nothing, void.</p>
+
+<p>You can apply via a simple mail to tech@dstoq.com outlining your project and we&#39;ll come back to you shortly</p>
+
+<p>The next thing is to provide us with an RSA-256 Public Key, that you will use to sign JSON-Web-Tokens to authenticate with our API:</p>
+
+<p>Send <code>jwtRS256.key.pub</code> to us and use <code>jwtRS256.key</code> to authenticate against our API. We will then give you your ISSUER name.</p>
+
+<p>Consequently, add an <code>Authorization</code> header to each request you make to our API: <code>JWT YOUR_TOKEN_HERE</code>.</p>
+
+<p>That&#39;s all to get started.</p>
+<h2 id='registering-new-users'>Registering new users</h2><div class="highlight"><pre class="highlight plaintext"><code>endpoint = 'https://api.dstoq.com/core/accounts/providers/accounts/'
+requests.post(endpoint, json={
+    'email': 'awesome@dstoq.rocks',
+    'public_key': SOME_PUBLIC_KEY
+}, headers={'Authorization': f'JWT YOUR_TOKEN_HERE'))
+</code></pre></div>
+<p>The first step in registering a user is telling us her e-mail and the stellar public key.</p>
+<h2 id='exchanging-kyc-information'>Exchanging KYC information</h2><div class="highlight"><pre class="highlight plaintext"><code>endpoint = 'https://api.dstoq.com/core/accounts/providers/kyc-documents/`
+
+
+# assume you have front_image, back_image and pdf_file as file-like object available
+front_b64 = b64encode(front_image.read()).decode()
+back_b64 = b64encode(back_image.read()).decode()
+pdf_b64 = b64encode(pdf_file.read()).decode()
+
+requests.post(endpoint, json={
+    # the email is required to match the kyc to the user
+    'email': 'awesome@dstoq.rocks,
+    'first_name': 'John',
+    'last_name': 'Doe',
+    'kyc_provider': 'ONFIDO',
+    'country_code': 'ng',
+    'passport_front': f'data:image/jpeg;base64,{front_b64}',
+    'passport_back': f'data:image/jpeg;base64,{back_b64}',
+    'kyc_provider_report': f'data:application/pdf;base64,{pdf_b64}'
+}, headers={'Authorization': f'JWT YOUR_TOKEN_HERE'))
+</code></pre></div>
+<p>The user is now in a pending state in our system and we are awaiting KYC information.</p>
+
+<p>We require the <code>email</code>, <code>first_name</code>, <code>last_name</code>, and <code>country_code</code> of the user, the name of the <code>kyc_provider</code> you are using (supported ones are <code>PASSBASE</code> and <code>ONFIDO</code>, but we are willing to add more if you have the requirement for that) and a front and back image of the id document. Finally we need the report of KYC Provider as PDF. All binary documents need to be B64 encoded.</p>
+
+<p>Awesome. We are now reviewing the KYC document as fast as possible - and that&#39;s very fast.</p>
+<h2 id='webhook-integration'>Webhook Integration</h2>
+<p>You can provide us with a Webhook URL where we can send you updates about the account, giving you the option to enhance the experience for the user.</p>
+
+<p>We&#39;ll POST updates to this URL like this: <code>YOUR_WEBHOOK_URL/{email_of_the_user}/{event_name}/</code>, sometimes with additional (optional) information about the event as the POST body. If you want to secure this endpoint, you may as well give us an API-Key that we send alongside with the Authorization Header.</p>
+
+<p>The following events are currently available:</p>
+
+<ul>
+<li><code>kyc_rejected</code></li>
+<li><code>kyc_verified</code> - yikes, the user can now trade!</li>
+<li><code>deposited</code></li>
+<li><code>first_trade</code> - of DSQ issued assets</li>
+<li><code>traded</code> - DSQ issued assets</li>
+</ul>
+<h2 id='trading'>Trading</h2><div class="highlight"><pre class="highlight plaintext"><code>import requests
+from stellar_sdk import Server, TransactionBuilder, Network, TransactionEnvelope
+
+
+APPROVAL_SERVER = 'https://dsq.technology/sep-8/tx-approve/'
+
+server = Server(horizon_url='https://horizon.stellar.org')
+builder = TransactionBuilder(server.load_account(PUBLIC_KEY_OF_THE_USER), Network.PUBLIC_NETWORK_PASSPHRASE)
+
+tx_xdr = builder.append_manage_buy_offer_op(
+    selling_code='USD',
+    selling_issuer='GDUKMGUGDZQK6YHYA5Z6AY2G4XDSZPSZ3SW5UN3ARVMO6QSRDWP5YLEX',
+    buying_code='TSLA',
+    buying_issuer='GBRDHSZL4ZKOI2PTUMM53N3NICZXC5OX3KPCD4WD4NG4XGCBC2ZA3KAG',
+    amount='1.00',
+    price='402.9721521'
+).build().to_xdr()
+
+xdr = requests.post(APPROVAL_SERVER, data={'tx': tx_xdr}).json()['tx']
+
+envelope = TransactionEnvelope.from_xdr(xdr, Network.PUBLIC_NETWORK_PASSPHRASE)
+envelope.sign(PRIVATE_KEY)
+server.submit_transaction(envelope)
+</code></pre></div>
+<p>Trading can done via the <a href="https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0008.md">SEP-0008</a>-Protocol. It essentially means that you create a transaction, send it to the DSQ SEP-8 Endpoint, get it back and broadcast it to the stellar network.</p>
+
+<p>A list of all available assets can be <a href="https://api.dstoq.com/core/assets/assets/">found in our API</a> or in our <a href="https://dsq.technology/.well-known/stellar.toml">Stellar TOML</a> definitions.</p>
+
+<p>Trading pairs need to have at least one base currency, defined as having the <code>is_trading_pair</code> flag set to true (and <code>can_be_traded</code> set to true).</p>
+
+<p>Currently trading of all assets happens against USD-Dollars issued by Anchor USD.</p>
+
+<p>Note, however, that you can as well use all the other endpoints (including the ones for trading) mentioned in this documentation.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
