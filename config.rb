@@ -1,5 +1,4 @@
 # Unique header generation
-require 'middleman-gh-pages'
 require './lib/unique_head.rb'
 
 # Markdown
