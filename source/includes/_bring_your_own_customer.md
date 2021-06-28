@@ -22,10 +22,6 @@ token = jwt.encode({
 ```
 
 In order to start integrating with DSTOQ you have to be a registered authentication provider. We need to have a small mutual contract in place and have to add you to our partner program. 
-Our partner program has only one pricing plan: **PREMIUM** and it's 0$ including VAT. That's right: None, null, zero, zip, nil, nothing, void.
-
-You can apply via a simple mail to tech@dstoq.com outlining your project and we'll come back to you shortly
-
 
 
 The next thing is to provide us with an RSA-256 Public Key, that you will use to sign JSON-Web-Tokens to authenticate with our API:
